@@ -12,4 +12,4 @@ DIAS_SIN_LEER_DIRECTORIO=7
 find /var/sambashares/comun -type f -atime +$DIAS_SIN_LEER_FICHERO -exec rm {} \;
 
 # Y ahora borra los directorios que estén vacíos:
-find /var/sambashares/comun -maxdepth 20 -type d -empty -mtime +$DIAS_SIN_LEER_DIRECTORIO -delete
+find /var/sambashares/comun -mindepth 1 -maxdepth 20 -type d -empty -mtime +$DIAS_SIN_LEER_DIRECTORIO -delete
